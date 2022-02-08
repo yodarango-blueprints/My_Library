@@ -1,0 +1,273 @@
+@import url("font-url");
+@import url("font-url");
+@import url("font-url");
+
+:root {
+   /****************************************/
+   /*********** Fonts ***************/
+   /**************************************/
+   --body-font: 400 1.2rem acumin-pro, sans-serif;
+   --title-font: 700 1.563rem acumin-pro, sans-serif;
+   --secondary-font: 300 italic 1.16rem acumin-pro, sans-serif;
+   --accent-font: 700 2.83rem acumin-pro, sans-serif;
+
+   /****************************************/
+   /*********** Colors *********/
+   /**************************************/
+   --primary-color: #2a2438;
+   --secondary-color: #433b55;
+   --third-color: #4f3b78;
+   --fourth-color: #5c5470;
+   --font-color: #f2f2f2;
+   --warning-color: #ec3b3b;
+   --success-color: #90d171;
+
+   /****************************************/
+   /*********** Spacing Specs *************/
+   /**************************************/
+   --xlarge-spacing-mobile: 5rem;
+   --large-spacing-mobile: 3rem;
+   --medium-spacing-mobile: 1.8rem;
+   --small-spacing-mobile: 1.5rem;
+   --xsmall-spacing-mobile: 0.8rem;
+
+    /****************************************/
+    /*********** Sizing Specs **************/
+    /**************************************/
+   --icon-sizing: 2rem;
+
+   /****************************************/
+   /*********** Main Wrapper *************/
+   /**************************************/
+   --main-wrapper: 92%;
+   --max-width-main-wrapper: 31.25rem;
+
+   /****************************************/
+   /*********** button sizing *************/
+   /**************************************/
+   --button-padding: 0.5rem 0;
+   --button-width: 9.375rem;
+   --button-radius-mobile: 0.625rem;
+
+   /*** Desktop */
+   --button-padding-desktop: 0.6rem 0;
+   --button-width-desktop: 11rem;
+   --button-radius-desktop: 0.6rem;
+
+   /****************************************/
+   /*********** Input Dimmensions *********/
+   /**************************************/
+   --input-width: 19rem;
+   --input-height: 3.1rem;
+   --input-padding: 0.5rem;
+   --input-radius: 0.5rem;
+
+   /****************************************/
+   /*********** Breaks ********************/
+   /**************************************/
+   --ipad-break: 600px;
+   --laptop-break: 800px;
+   --desktop-break: 1050px;
+}
+
+
+@media (min-width: var(--ipad-break)) {
+    
+    :root{
+         /****************************************/
+        /*********** Spacing Specs *************/
+        /**************************************/
+        --xlarge-spacing: 5.4rem;
+        --large-spacing: 3.3rem;
+        --medium-spacing: 2rem;
+        --small-spacing: 1.7rem;
+        --xsmall-spacing: 0.9rem;
+    }
+}
+
+@media (min-width: var(--desktop-break)) {
+    
+    :root{
+           /****************************************/
+          /***************** Fonts ***************/
+          /**************************************/
+          --body-font: 400 1.35rem acumin-pro, sans-serif;
+          --title-font: 700 1.875rem acumin-pro, sans-serif;
+          --secondary-font: 300 italic 1.3rem acumin-pro, sans-serif;
+          --accent-font: 700 1.35rem acumin-pro, sans-serif;
+       
+         /****************************************/
+        /*********** Spacing Specs *************/
+        /**************************************/  
+        --xlarge-spacing: 5.6rem;
+        --large-spacing: 3.5rem;
+        --medium-spacing: 2.2rem;
+        --small-spacing: 1.9rem;
+        --xsmall-spacing: 1rem;
+
+        /****************************************/
+        /*********** Sizing Specs **************/
+        /**************************************/ 
+        --icon-sizing: 2.5rem;
+
+       /****************************************/
+       /*********** Main Wrapper **************/
+       /**************************************/
+        --max-width-main-wrapper: 62.5rem;
+
+        /****************************************/
+        /*********** button sizing *************/
+        /**************************************/
+        --button-padding: 0.6rem 0;
+        --button-width: 11rem;
+        --button-radius: 0.6rem;
+
+        /****************************************/
+        /*********** Input Dimmensions *********/
+        /**************************************/
+        --input-width: 22rem;
+        --input-height: 3.8rem;
+        --input-padding: 0.6rem;
+        --input-radius: 0.7rem;
+    }
+}
+
+/***************************** GENERAL STYLING *****************************************/
+h1, h2, h3, h4, h5, h6, .std-title{
+    font: var(--title-font);
+    color: var(--font-color);
+    text-align: center;
+    margin: var(--medium-spacing) auto;
+    width: 100%;
+}
+
+h2{
+    font-size: 1.688rem;
+}
+
+h3{
+    font-size: 1.563rem;
+    margin: var(--small-spacing) auto;
+}
+
+h4, .std-title--small{
+    font-size: 1.375rem;
+    margin: var(--small-spacing) auto;
+}
+
+h5, h6{
+    font-size: 1.2rem;
+    margin: var(--small-spacing) auto;
+}
+
+p, .std-text-block, .std-text-block--secondary {
+    font: var(--body-font);
+    color: var(--font-color);
+    text-align: center;
+    margin: var(--medium-spacing) auto;
+    width: 100%;
+}
+
+/***************************** STANDARDS *****************************************/
+/*--------------- Buttons:                                                      */
+button, .std-button{
+    height: var(--input-height);
+    display: block;
+    width: var(--button-width);
+    padding: var(--button-padding);
+    border-radius: var(--button-radius);
+    margin: var(--medium-spacing) auto;
+    font: var(--accent-font);
+    text-align: center;
+    border: none;
+}
+
+button:hover, .std-button:hover{
+    cursor: pointer;
+}
+
+/*--------------- Input:                                                       */
+input[type=text], input[type=email], input[type=tel], input[type=url], .std-input{
+    width: 100%;
+    max-width: var(--input-width);
+    height: var(--input-heihgt);
+    padding: var(--input-padding);
+    margin: var(--medium-spacing) auto 0;
+    font: var(--primary-font);
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    border-radius: var(--input-radius);
+    outline: none;
+    border: none;
+}
+
+input[type=radio], input[type=file], input[type=checkbox] {
+    display: none;
+}
+
+/*--------------- Text:                                                        */
+.std-text-block--secondary{
+    font: var(--secondary-font);
+}
+
+/*--------------- Images:                                                      */
+img, .std-img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+    display: block;
+    margin: var(--medium-spacing) auto;
+}
+
+.std-background
+{
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.std
+{
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.std-icon{
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: var(--icon-sizing);
+    height: var(--icon-sizing);
+}
+
+/*--------------- Containers:                                                     */
+.std-flex-row, .std-flex-column, .std-flex--nowrap,
+ .std-flex--start, .std-flex--end {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+ 
+ .std-flex-column {
+    flex-flow: column;
+ }
+
+ .std-flex--nowrap{
+     flex-wrap: nowrap;
+ }
+
+ .std-flex--start{
+    justify-content: flex-start;
+ }
+
+ .std-flex--end{
+    justify-content: flex-end;
+ }

@@ -1,0 +1,34 @@
+*{
+	font-size: 100%;
+	border: none;
+	outline: 0;
+	padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    overflow-x: hidden;
+    line-height: 1.8em;
+}
+
+a:visited, a:active, a:link
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

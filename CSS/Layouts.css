@@ -1,0 +1,44 @@
+/***************************** OVERLAYS *****************************************/
+.notification-wrapper {
+    position: fixed;
+    width: 90%;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    margin: auto;
+    max-width: var(--max-width-main-wrapper);
+    background-color: #fff;
+    z-index: 15;
+    padding: var(--xsmall-spacing);
+    border-radius: var(--button-radius);
+    text-align: left;
+ }
+
+ .overlay-wrapper--centered {
+    position: fixed;
+    width: 90%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: var(--max-width-main-wrapper);
+    background-color: #fff;
+    z-index: 15;
+    padding: var(--small-spacing);
+    border-radius: var(--button-radius);
+    text-align: left;
+ }
+
+ .full-bkg-layer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #242424;
+    opacity: .5;
+    z-index: 14;
+    overflow-y: scroll;
+ }

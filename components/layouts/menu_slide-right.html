@@ -1,0 +1,151 @@
+<style>
+.menu-trigger {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  margin: auto;
+  background: #ef476f;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.menu-trigger{
+  cursor: pointer;
+}
+
+.menu-trigger div
+{
+  width: 1.2rem;
+  height: 0.2rem;
+  background: white;
+  margin: 0.2rem 0;
+}
+/*  ---MENU WRAPPER ---*/
+.menu-container {
+  position: fixed;
+  width: 0;
+  max-width: 500px;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color: #ffafcc;
+  display: block;
+  z-index: 3;
+  width: 80%;
+  transition: width 600ms ease-in-out 0s;
+}
+
+.menu-container a:first-of-type,
+.menu-container .a-open:first-of-type {
+  margin-top: 12rem;
+}
+
+.menu-container a,
+.menu-container .a-open {
+  margin-top: 3rem;
+}
+.menu-container a,
+.menu-container .a-open {
+  display: block;
+  position: relative;
+  left: 0;
+  font: 400 2rem "Oswald", sans-serif;
+  color: #ef476f;
+  width: 80%;
+  margin: 1rem auto;
+  text-decoration: none;
+  transition: left 500ms ease-in-out;
+}
+
+.menu-container .a-close {
+    color: transparent;
+    transition: left 500ms ease-in-out;
+    left: -15rem;
+}
+
+#menu-button {
+  padding: 1rem 2rem;
+  color: #ffffff;
+  font: 800 1.2rem "Oswald", sans-serif;
+  text-align: center;
+  margin-left: 10%;
+  display: block;
+  max-width: 300px;
+  background: #2b2b2b;
+  border: none;
+}
+
+.menu-container a:hover,
+.menu-container .a-open:hover {
+  color: #2b2b2b;
+  cursor: pointer;
+}
+</style>
+
+<!--  MENNU BUTTON -->
+<div class="menu-trigger">
+    <div class="menu_burger-top"></div>
+    <div class="menu_burger-middle"></div>
+    <div class="menu_burger-bottom"></div>
+  </div>
+  
+  <!--  MENU WRAPPER-->
+  <div class="menu-container">
+    <a href="/" class="menu-container_link-one a-open">Home</a>
+    <a href="/about" class="menu-container_link-two a-open">About</a>
+    <a href="/posts" class="menu-container_link-two a-open">All Posts</a>
+    <a href="/contact" class="menu-container_link-three a-open">Contact</a>
+    <a href="#" id="pay-button" class="menu-container_link-three a-open"></a>
+    <br><br><br><br>
+    <a id="menu-button" class="menu-container_link-three a-open">Subscribe</a>
+  </div>
+
+  <script>
+      //menu
+const menuTrigger = document.querySelector(".menu-trigger");
+let toggleMenu = true;
+
+const triggerMenu = () => {
+  const topBar = document.querySelector(".menu_burger-top");
+  const middleBar = document.querySelector(".menu_burger-middle");
+  const bottomBar = document.querySelector(".menu_burger-bottom");
+  const menuContainer = document.querySelector(".menu-container");
+  const menuContainerDiv = document.querySelectorAll(".menu-container a");
+
+  if (toggleMenu === true) {
+    menuContainer.style.cssText =
+      "width: 80%; transition: width 600ms ease-in-out;";
+    topBar.style.cssText =
+      "transform: rotate(45deg);  position: relative; top: .2rem; margin: 0; transition: transform 300ms ease-in-out;";
+    middleBar.style.cssText = "display: none;";
+    bottomBar.style.cssText =
+      "transform: rotate(-45deg);  position: relative; top: .-2rem; margin: 0; transition: transform 300ms ease-in-out;";
+    menuContainerDiv.forEach((div) => {
+      div.classList.remove("a-close");
+      div.classList.add("a-open");
+    });
+    toggleMenu = false;
+  } else if (toggleMenu === false) {
+    menuContainer.style.cssText =
+      "width: 0; transition: width 600ms ease-in-out;";
+    topBar.style.cssText =
+      "transform: rotate(0); transition: transform 300ms ease-in-out;";
+    middleBar.style.cssText = "display: block;";
+    bottomBar.style.cssText =
+      "transform: rotate(0); transition: transform 300ms ease-in-out;";
+    menuContainerDiv.forEach((div) => {
+      div.classList.remove("a-open");
+      div.classList.add("a-close");
+    });
+
+    toggleMenu = true;
+  }
+};
+menuTrigger.addEventListener("click", triggerMenu);
+  </script>
