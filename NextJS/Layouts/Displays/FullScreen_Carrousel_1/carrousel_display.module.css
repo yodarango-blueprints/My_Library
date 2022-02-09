@@ -1,0 +1,83 @@
+.tscaAddWrapper {
+    height: 40.625rem;
+    width: 100%;
+    background-image: url("/images/tsca-bkg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: ceover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .tscaModule {
+    background: none;
+  }
+  
+  .tscaAddWrapper h2 {
+    color: var(--primary-color);
+    font: var(--title-font);
+    font-size: 3rem;
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .wisdom {
+    text-align: left;
+  }
+  
+  .integrity {
+    text-align: center;
+  }
+  
+  .excellence {
+    text-align: right;
+  }
+  .stdButtonAcademy {
+    margin: 0 atuo;
+    font-size: 0.8rem;
+    padding: 1rem 0;
+  }
+  
+
+  @media (var(--ipad-break)) {
+        /* =================== TSCA Section ================== */
+  .tscaAddWrapper {
+    height: 43.75rem;
+  }
+
+  .tscaAddWrapper h2 {
+    font: var(--title-font);
+    font-size: 4rem;
+    padding: 0 1rem;
+  }
+
+  .stdButtonAcademy {
+    font-size: 1rem;
+    max-width: 300px;
+  }
+
+  }
+
+  @media (min-width: var(--laptop-break)) {
+    /* =================== TSCA Section ================== */
+  /* =================== TSCA Section ================== */
+  .tscaAddWrapper {
+    height: 62.5rem;
+  }
+
+  .tscaAddWrapper h2 {
+    font: var(--title-font);
+    font-size: 4rem;
+    line-height: 0.8em;
+    padding: 0 2rem;
+  }
+
+  .stdButtonAcademy {
+    font-size: 1rem;
+    max-width: 31.25rem;
+  }
+
+}

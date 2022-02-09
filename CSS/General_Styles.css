@@ -173,9 +173,9 @@ p, .std-text-block, .std-text-block--secondary {
 button, .std-button{
     height: var(--input-height);
     display: block;
-    width: var(--button-width);
+    width: 100%;
+    max-width: var(--button-width);
     padding: var(--button-padding);
-    border-radius: var(--button-radius);
     margin: var(--medium-spacing) auto;
     font: var(--accent-font);
     text-align: center;

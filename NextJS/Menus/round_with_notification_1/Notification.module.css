@@ -28,7 +28,7 @@
   }
   
   .message {
-    font: 200 1rem var(--main-font);
+    font: 200 1rem var(--body-font);
     color: white;
     text-align: center;
   }

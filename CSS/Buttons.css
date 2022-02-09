@@ -1,0 +1,64 @@
+/* ------------- Glow Buttons --------- */
+/* ---------- Pill Button 1 */
+.button_pill--glowr {
+    width: 100%;
+    max-width: 15.7rem;
+    padding: 0.5rem;
+    font-family: var(--main-font);
+    color: #fff;
+    font-size: var(--medium-font-size-mobile);
+    font-weight: 700;
+    -webkit-box-shadow: 1px 1px 5px 1px var(--primary-color),-1px -1px 5px 1px var(--primary-color);
+    box-shadow: 1px 1px 5px 1px var(--primary-color),-1px -1px 5px 1px var(--primary-color);
+    display: block;
+    border: none;
+    border-radius: 3rem;
+    -webkit-transition: .1s ease-in;
+    transition: .1s ease-in;
+    text-align: center;
+    margin: auto;
+    letter-spacing: 5px;
+}
+
+.button_pill--glow:hover{
+    cursor: pointer;
+    -webkit-box-shadow: 4px 4px 10px 1px var(--primary-color),-4px -4px 10px 2px var(--primary-color);
+    box-shadow: 4px 4px 10px 1px var(--primary-color),-4px -4px 10px 2px var(--primary-color);
+}
+
+@media (min-width: var(--laptop-break)) {
+    .std-button {
+      width: 100%;
+      max-width: 15.7rem;
+      padding: 0.5rem;
+      font-family: var(--main-font);
+      color: white;
+      font-size: var(--medium-font-size-desktop);
+      font-weight: 700;
+      box-shadow: 1px 1px 5px 1px var(--primary-color),
+        -1px -1px 5px 1px var(--primary-color);
+      background-image: linear-gradient(
+        45deg,
+        var(--secondary-color),
+        var(--primary-color)
+      );
+      display: block;
+      border: none;
+      border-radius: 3rem;
+      transition: 100ms ease-in;
+      text-align: center;
+      margin: auto;
+      letter-spacing: 5px;
+    }
+  
+    .std-button:hover {
+      cursor: pointer;
+      box-shadow: 4px 4px 10px 1px var(--primary-color),
+        -4px -4px 10px 2px var(--primary-color);
+      background-image: linear-gradient(
+        45deg,
+        var(--secondary-color),
+        var(--primary-color)
+      );
+    }
+  }

@@ -164,7 +164,7 @@
     display: block;
     width: 100%;
     text-align: right;
-    font: var(--main-font);
+    font: var(--body-font);
     font-size: 3rem;
     font-weight: 600;
     margin: 0;
@@ -234,7 +234,7 @@
     border: 1px solid var(--secondary-color);
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font: 100 var(--small-font-size-mobile) var(--main-font);
+    font: 100 var(--small-font-size-mobile) var(--body-font);
     outline: none;
     caret-color: var(--secondary-color);
     color: white;
@@ -259,7 +259,7 @@
     justify-content: space-around;
     flex-direction: column;
     resize: none;
-    font-family: var(--main-font);
+    font-family: var(--body-font);
     font-size: var(--small-font-size-mobile);
     font-weight: 100;
     padding: 1rem;
@@ -279,7 +279,7 @@
   }
   
   /* ============= IPAD ============ */
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: var(--ipad-break)) {
     .instagramIcon,
     .facebookIcon {
       height: 3.5rem;
@@ -287,7 +287,7 @@
     }
   
     .facebookIcon {
-      margin: 0 6rem 0 var(--small-spacing-mobile);
+      margin: 0 6rem 0 var(--small-spacing);
     }
   
     .contactForm {
@@ -305,7 +305,7 @@
   
     .contactForm input,
     .contactForm textarea {
-      font-size: var(--medium-font-size-mobile);
+      font: var(--body-font);
     }
   }
   
@@ -324,7 +324,7 @@
     }
   
     .facebookIcon {
-      margin: 0 10rem 0 var(--large-spacing-desktop);
+      margin: 0 10rem 0 var(--large-spacing);
     }
   
     .menuWrapper a,
