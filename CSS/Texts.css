@@ -1,0 +1,9 @@
+
+.glowing_text_one {
+    transform: scale(.9);
+    margin-top: var(--xlarge-spacing-mobile);
+    color: var(--primary-color);
+    text-shadow: 0 0 2.5px var(--second-color),0 0 10px var(--font-color);
+    will-change: filter,color;
+    filter: saturate(60%);
+}

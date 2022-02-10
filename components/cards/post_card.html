@@ -1,0 +1,141 @@
+<style>
+    .std-h1.favorites-title {
+    transform: scale(.9);
+    margin-top: var(--xlarge-spacing-mobile);
+    color: var(--primary-color);
+    text-shadow: 0 0 2.5px var(--second-accent-color), 0 0 10px var(--font-color);
+    will-change: filter, color;
+    filter: saturate(60%);
+}
+
+.std-text-quiet.quiet-post-info {
+    margin: var(--xsmall-spacing-mobile) auto var(--xsmall-spacing-mobile) 0;
+}
+
+.category-wrapper--favoites {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.posts-wrapper--favorite{
+    margin: var(--large-spacing-mobile) auto;
+}
+
+.favorite-post-wrapper, .blog-post-wrapper {
+    width: 100%;
+    min-height: 18.75rem;
+    max-width: 28.125rem;
+    margin: var(--medium-spacing-mobile) auto;
+    position: relative;
+    border-radius: var(--std-radius-mobile);
+    overflow: hidden;
+}
+
+.blog-post-wrapper{
+    padding: var(--small-spacing-mobile);
+    border: .2rem solid var(--third-color);
+    height: 30rem;
+}
+
+.favorite-post-info-wrapper, .blog-post-info-wrapper {
+    background-color: var(--primary-color-tranparent);
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: block;
+    padding: var(--small-spacing-mobile);
+}
+
+.blog-post-info-wrapper{
+    background: none;
+    height: 45%;
+}
+
+.std-p_blog-desc {
+    margin-top: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1em;
+}
+
+.header-h3--favorite, .header-h3--blog {
+    color: var(--font-color);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.post-type.type_favorite, .post-type.type_blog {
+    margin-right: auto;
+    margin-left: 0;
+}
+</style>
+
+<div class="main-wrapper main-wrapper_favorite">
+    <section class="post-title-wrapper wrapper-favorite">
+        <span class="post-type post-type_header--favorite std-icon"></span>
+        <h1 class="std-h1 favorites-title">FAVORITES</h1>
+    </section>
+
+    <p class="std-p favorites-parrgraph">
+        Welcome to my favorites page. Here I talk about my favorite software, hardware, tools, activities, and other things that aid my productivity.
+        Whether is ministry, school, or simply leisure, there is a favorite for everything! If you enjoy  the content consider
+        <a asp-controller="home" asp-action="index" class="std-a">following the webiste </a>To stay updated via email! Blessings 😊
+    </p>
+
+    <div class="category-wrapper category-wrapper--favoites">
+        <h3 class="std-h3">Filter By Tag</h3>
+        @foreach (CategoryModel tag in allTags)
+        {
+            <a asp-action="Index" asp-controller="Posts" asp-route-tag="@tag.Category" class="category-tag">#@tag.Category</a>
+        }
+    </div>
+
+
+    @if (Model.Count() > 0)
+    {
+        <div class="posts-wrapper posts-wrapper--favorite">
+            @foreach (FavoriteModel post in Model)
+            {
+                <div class="favorite-post-wrapper" onclick="redirectToPost('@post.ID', '@post.PostType')">
+                    @await Html.PartialAsync("_Carrousel", post);
+                    <div class="std-blurr-layer"></div>
+                    <aside class="favorite-post-info-wrapper">
+                        <div>
+                            <h3 class="std-h3 header-h3--favorite">@post.Title</h3>
+                            <p class="std-text-quiet quiet-post-info">@post.DatePosted</p>
+
+                            <div class="tag-footer">
+
+                                <span class="post-type type_favorite"></span>
+
+                                <div class="category-wrapper">
+                                    @if (!String.IsNullOrEmpty(post.Categories))
+                                    {
+                                        string[] tags = post.Categories.Split(" ");
+                                        foreach (string tag in tags)
+                                        {
+                                            <a asp-action="Index" asp-controller="Posts" asp-route-tag="@tag" class="category-tag">@tag</a>
+                                        }
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <p class="std-p std-p_favorite-desc">
+                               Description
+                            </p> -->
+                    </aside>
+                </div>
+            }
+        </div>
+    }
+</div>
